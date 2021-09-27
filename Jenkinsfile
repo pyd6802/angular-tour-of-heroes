@@ -9,7 +9,7 @@ pipeline {
 
     stage('Stage 2') {
       steps {
-        powershell 'Hello.ps1'
+        powershell '. "$ENV:$WORKSPACE\\Hello.ps1"'
       }
     }
 
