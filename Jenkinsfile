@@ -5,7 +5,7 @@ pipeline {
       steps {
         echo 'Step 1'
         echo 'build branch - updated by pyd6802'
-        powershell '". \\Buildstagetoh.ps1"'
+        powershell '. \\BuildStagetoh.ps1'
       }
     }
 
