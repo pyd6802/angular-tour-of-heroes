@@ -5,7 +5,7 @@ pipeline {
       steps {
         echo 'Step 1'
         echo 'build branch - updated by pyd6802'
-        powershell 'npm run ng build'
+        powershell 'ng build'
       }
     }
 
