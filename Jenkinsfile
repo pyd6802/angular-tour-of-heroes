@@ -7,11 +7,5 @@ pipeline {
       }
     }
 
-    stage('Stage 2') {
-      steps {
-        powershell 'Hello.ps1'
-      }
-    }
-
   }
 }
