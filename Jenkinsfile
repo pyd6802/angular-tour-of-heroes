@@ -7,5 +7,12 @@ pipeline {
       }
     }
 
+    stage('Stage 2') {
+      steps {
+        pwd()
+        pwsh 'Hello.ps1'
+      }
+    }
+
   }
 }
