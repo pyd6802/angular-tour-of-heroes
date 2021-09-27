@@ -5,9 +5,9 @@ pipeline {
       steps {
         echo 'Step 1'
         echo 'build branch - updated by pyd6802'
-		powershell write-host "powershell is being called"
-		powershell dir
-	    powershell '. \npm run ng build'
+		powershell 'write-host "powershell is being called"'
+		powershell 'dir'
+	    powershell '.\npm run ng build'
 	  }
     }
 
