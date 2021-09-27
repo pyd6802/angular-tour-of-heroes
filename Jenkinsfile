@@ -1,11 +1,11 @@
-pipeline {
-  agent any
-  stages {
-    stage('Stage 1') {
-      steps {
-        echo 'Build from Github'
-      }
+	pipeline {
+    agent any
+    stages {
+        stage('build') {
+            steps {
+                sh 'uname -a'
+                sh 'echo main branch - updated by pyd6802'
+            }
+        }
     }
-
-  }
 }
