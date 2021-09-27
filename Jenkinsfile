@@ -3,8 +3,8 @@
     stages {
         stage('build') {
             steps {
-                sh 'uname -a'
-                sh 'echo main branch - updated by pyd6802'
+                echo 'Step 1'
+                echo 'build branch - updated by pyd6802'
             }
         }
     }
