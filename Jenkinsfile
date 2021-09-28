@@ -14,6 +14,7 @@ pipeline {
     stage('deploy') {
       steps {
         echo 'Deploy'
+		powershell returnStatus: true, script: 'npm run ng serve --open'
       }
     }
 
