@@ -15,7 +15,7 @@ pipeline {
       steps {
         echo 'Deploy'
         powershell(returnStatus: true, script: 'npm run ng serve --open')
-        timeout(time: 30)
+        timeout(time: 30, activity: true)
       }
     }
 
