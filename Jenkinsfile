@@ -7,15 +7,14 @@ pipeline {
         echo 'build branch - updated by pyd6802'
         powershell 'write-host "powershell is being called"'
         powershell(returnStatus: true, script: 'npm install')
-        powershell(returnStatus: true, script: 'npm run ng build')
       }
     }
 
     stage('deploy') {
       steps {
         echo 'Deploy'
-        powershell(returnStatus: true, script: 'npm run ng serve --open')
-        timeout(time: 30, activity: true)
+        powershell(returnStatus: true, script: 'npm run ng build')
+        echo 'Deploy Complete'
       }
     }
 
