@@ -3,10 +3,9 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        echo 'Step 1'
-        echo 'build branch - updated by pyd6802'
-        powershell 'write-host "powershell is being called"'
+        echo 'Build'
         powershell(returnStatus: true, script: 'npm install')
+		echo 'Build Complete'
       }
     }
 
