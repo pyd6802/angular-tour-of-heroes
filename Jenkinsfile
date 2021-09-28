@@ -6,7 +6,7 @@ pipeline {
         echo 'Step 1'
         echo 'build branch - updated by pyd6802'
 		powershell 'write-host "powershell is being called"'
-	    powershell returnStatus: true, script: '.\\BuildStagetoh.ps1'
+	    powershell returnStatus: true, script: '.\BuildStagetoh.ps1'
 	  }
     }
 
