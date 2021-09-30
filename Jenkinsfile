@@ -9,7 +9,7 @@ node {
     stage('deploy') {
        try { 
            timeout(2) {
-               dir ('toh') { echo 'Deploy Start, process will run for 1 minute'
+               dir ('toh') { echo 'Deploy Start, process will run for 2 minutes'
            powershell(returnStatus: true, script: 'npm run ng serve') }
            }
         } catch(err){
