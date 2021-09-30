@@ -1,8 +1,9 @@
 node {
     stage('build') {
         echo 'Build'
-        powershell(returnStatus: true, script: 'npm install')
-        powershell(returnStatus: true, script: 'npm run ng build')
+         dir ('toh')
+        {powershell(returnStatus: true, script: 'npm install')
+        powershell(returnStatus: true, script: 'npm run ng build')}
         } 
     stage('deploy') {
        try { 
