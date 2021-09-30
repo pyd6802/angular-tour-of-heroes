@@ -17,6 +17,7 @@ pipeline {
         powershell(returnStatus: true, script: 'npm run ng serve')
         }
       }
+    }
     } catch(err) {	
 	   echo 'Deploy complete all done - Times Up (1 minute)'
     }
