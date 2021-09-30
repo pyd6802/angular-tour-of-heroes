@@ -1,9 +1,14 @@
 node {
+    stage('Initialize') {
+        echo 'Clear Directory' {
+        powershell(returnStatus: true, script 'rmdir /S /Q toh')}
+        }
     stage('build') {
         echo 'Build Start'
-         dir ('toh')
-        {powershell(returnStatus: true, script: 'npm install')
-        powershell(returnStatus: true, script: 'npm run ng build')}
+         dir ('toh') {
+         powershell(returnStatus: true, script 'git clone https://github.com/pyd6802/angular-tour-of-heroes')
+         powershell(returnStatus: true, script: 'npm install')
+         powershell(returnStatus: true, script: 'npm run ng build')}
         } 
     stage('deploy') {
        try { 
