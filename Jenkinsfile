@@ -1,8 +1,4 @@
 node {
-    stage('Initialize') {
-        echo 'Clear Directory' {
-        powershell(returnStatus: true, script: 'rmdir /S /Q toh')}
-        }
     stage('build') {
         echo 'Build Start'
          dir ('toh') {
