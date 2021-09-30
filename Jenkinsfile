@@ -11,10 +11,10 @@ pipeline {
     }
 
     stage('deploy') {
+      echo 'Deploy'
       try {
         timeout(1) {
-		echo 'Deploy'
-        {powershell(returnStatus: true, script: 'npm run ng serve')}
+         powershell(returnStatus: true, script: 'npm run ng serve')
         }
       }
       catch(err) {echo 'Deploy complete all done - Times Up (1 minute)'
