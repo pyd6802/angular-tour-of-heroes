@@ -1,6 +1,6 @@
 node {
     stage('build') {
-        echo 'Build'
+        echo 'Build Start'
          dir ('toh')
         {powershell(returnStatus: true, script: 'npm install')
         powershell(returnStatus: true, script: 'npm run ng build')}
@@ -8,7 +8,7 @@ node {
     stage('deploy') {
        try { 
            timeout(1) {
-               dir ('toh') {
+               dir ('toh') { echo 'Deploy will run for 1 minute'
            powershell(returnStatus: true, script: 'npm run ng serve') }
            }
         } catch(err){
