@@ -1,8 +1,7 @@
 node {
     stage('build') {
-        echo 'Build Start, Clone / Install / Run'
+        echo 'Build Start, Install / Build'
          dir ('toh') {
-         powershell(returnStatus: true, script: 'git clone https://github.com/pyd6802/angular-tour-of-heroes')
          powershell(returnStatus: true, script: 'npm install')
          powershell(returnStatus: true, script: 'npm run ng build')}
         } 
