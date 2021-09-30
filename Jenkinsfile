@@ -5,7 +5,7 @@ pipeline {
       steps {
         echo 'Build'
         powershell(returnStatus: true, script: 'npm install')
-		powershell(returnStatus: true, script: 'npm run ng build')
+        powershell(returnStatus: true, script: 'npm run ng build')
 		echo 'Build Complete'
       }
     }
@@ -17,9 +17,8 @@ pipeline {
         powershell(returnStatus: true, script: 'npm run ng serve')
         }
       }
-    }
-    } catch(err) {	
-	   echo 'Deploy complete all done - Times Up (1 minute)'
+      catch(err) {echo 'Deploy complete all done - Times Up (1 minute)'
+        }
     }
   }
-}
+}  
