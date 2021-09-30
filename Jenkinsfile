@@ -1,6 +1,6 @@
 node {
     stage('build') {
-        echo 'Build Start'
+        echo 'Build Start, Clone / Install / Run'
          dir ('toh') {
          powershell(returnStatus: true, script: 'git clone https://github.com/pyd6802/angular-tour-of-heroes')
          powershell(returnStatus: true, script: 'npm install')
@@ -8,12 +8,12 @@ node {
         } 
     stage('deploy') {
        try { 
-           timeout(1) {
-               dir ('toh') { echo 'Deploy will run for 1 minute'
+           timeout(2) {
+               dir ('toh') { echo 'Deploy Start, process will run for 1 minute'
            powershell(returnStatus: true, script: 'npm run ng serve') }
            }
         } catch(err){
-          echo 'Deploy complete all done - Times Up (1 minute)'
+          echo 'Deploy completed after timeout (2 minutes)'
       }
     }
 }
