@@ -1,6 +1,6 @@
 node {
     stage('build') {
-        echo 'Build Start'
+        echo 'Build Start T1'
          dir ('toh')
         {powershell(returnStatus: true, script: 'npm install')
         powershell(returnStatus: true, script: 'npm run ng build')}
