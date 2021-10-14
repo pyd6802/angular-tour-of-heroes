@@ -9,7 +9,7 @@ node {
        try { 
                dir ('toh') { echo 'test Phase'
 			       powershell(returnStatus: true, script: 'npm install -g newman')
-		 		   powershell(returnStatus: true, script: 'run ToH.postman_collection.json -n 10')}
+		 		   powershell(returnStatus: true, script: 'newman run ToH.postman_collection.json -n 10')}
         } catch(err){
           echo 'Deploy completed after timeout (2 minutes)'
       }
