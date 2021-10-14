@@ -7,9 +7,9 @@ node {
         } 
     stage('Test') {
        try { 
-               dir ('toh') { echo 'Run Tests'
+               dir ('toh') { echo 'test Phase'
 			       powershell(returnStatus: true, script: 'npm install -g newman')
-		 		   powershell(returnStatus: true, script: '\node_modules\newman\newman run ToH.postman_collection.json')}
+		 		   powershell(returnStatus: true, script: 'run ToH.postman_collection.json -n 10')}
         } catch(err){
           echo 'Deploy completed after timeout (2 minutes)'
       }
